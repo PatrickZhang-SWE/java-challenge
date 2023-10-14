@@ -47,8 +47,9 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 
 - I know Spring Boot very well and have been using it for more than 3 years
 
-#### What I have done
+### What I have done
 
+- upgrade version of springboot to 2.4.0 since there are some vulnerabilities.
 - remove some unnecessary codes.
 - fix some bugs.
 - add cache logics.

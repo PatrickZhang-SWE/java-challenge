@@ -23,7 +23,7 @@ public class EmployeeController {
     @GetMapping("/employees")
     public List<Employee> getEmployees() {
         List<Employee> employees = employeeService.retrieveEmployees();
-        log.info("The total size retrived is {}",employees.size());
+        log.info("The total size retrieved is {}",employees.size());
         return employees;
     }
 

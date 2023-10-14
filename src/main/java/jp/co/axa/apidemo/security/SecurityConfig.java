@@ -41,8 +41,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.csrf().disable().authorizeRequests()
-                .antMatchers("/h2-console/**", "/swagger-ui.html/**")// exclude h2-console and swagger-ui
+                .antMatchers("/h2-console/**",
+                        "/swagger-ui.html",
+                        "/v2/api-docs",
+                        "/configuration/ui",
+                        "/swagger-resources/**",
+                        "/configuration/security",
+                        "/webjars/**")// exclude h2-console and swagger-ui
                 .permitAll().anyRequest().authenticated().and().httpBasic();
+        http.headers().frameOptions().disable();
         return http.build();
     }
 
