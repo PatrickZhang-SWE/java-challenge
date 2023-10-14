@@ -45,8 +45,19 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 
 #### Your experience in Java
 
-Please let us know more about your Java experience in a few sentences. For example:
+- I know Spring Boot very well and have been using it for more than 3 years
 
-- I have 3 years experience in Java and I started to use Spring Boot from last year
-- I'm a beginner and just recently learned Spring Boot
-- I know Spring Boot very well and have been using it for many years
+#### What I have done
+
+- remove some unnecessary codes.
+- fix some bugs.
+- add cache logics.
+- add authorization and authentication
+- add validations
+- add test cases.
+
+### Would have done
+
+ - add log framework.
+ - add a real cache layer and use AOP to do cache.
+ - add a well-defined user manage system.
