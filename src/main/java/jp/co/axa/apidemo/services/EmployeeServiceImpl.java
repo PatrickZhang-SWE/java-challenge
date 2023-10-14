@@ -29,7 +29,12 @@ public class EmployeeServiceImpl implements EmployeeService{
             return employee; // return from cache.
         }
         Optional<Employee> optEmp = employeeRepository.findById(employeeId);
-        return optEmp.orElse(null); //TODO we can add empty cache here in case too many requests for a non-exist employee.
+        if(optEmp.isPresent()){
+            Employee rawEmployee = optEmp.get();
+            cacheService.putInCache(rawEmployee); // write back to cache
+            return rawEmployee;
+        }
+        return null;
     }
 
     public Employee saveEmployee(Employee employee){
@@ -39,8 +44,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     public void deleteEmployee(Long employeeId){
-        employeeRepository.deleteById(employeeId);
         cacheService.removeInCache(employeeId); // remove from cache too.
+        employeeRepository.deleteById(employeeId);
     }
 
     public void updateEmployee(Employee employee) {
