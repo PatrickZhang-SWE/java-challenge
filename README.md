@@ -55,9 +55,9 @@ Application (with the embedded H2 database) is ready to be used ! You can access
 - add authorization and authentication
 - add validations
 - add test cases.
+- add log configuration.
 
 ### Would have done
 
- - add log framework.
  - add a real cache layer and use AOP to do cache.
  - add a well-defined user manage system.
